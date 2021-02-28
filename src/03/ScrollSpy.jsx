@@ -3,6 +3,7 @@ import React from 'react';
 /**
  * 컴포넌트에서 window.addEventListener() 과 같이 Dom 객체 함수를 사용하려면
  * DOM 객체를 컴포넌트 변수에 할당해야한다. 
+ * 이때, 특수 프로퍼티 ref를 사용함
  */
 export default class ScrollSpy extends React.PureComponent {
     constructor(props) {
