@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 
-class Counter extends Component {
-
+class Counter3 extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            //count의 초기값을 프로퍼티에서 전달된 값으로 설정한다.
-            count: props.count,
+            count: 0,
         };
         this.increaseCount = this.increaseCount.bind(this);
+        this.resetCount = this.resetCount.bind(this);
     }
-
     increaseCount() {
         this.setState(({ count }) => ({
             count: count + 1
         }));
+    }
+    resetCount() {
+        this.setState({ count: 0 });
     }
 
     render() {
@@ -22,12 +23,14 @@ class Counter extends Component {
             <div>
                 현재 카운트 : {this.state.count}
                 <button
-                    onClick={this.increaseCount}>
+                    onClick={this.increaseCount}
+                    onMouseOut={this.resetCount} >
                     카운트 증가
                 </button>
-            </div>
+                버튼 밖으로 커서가 움직이면 0으로 초기화된다.
+            </div >
         );
     }
 }
 
-export default Counter;
+export default Counter3;

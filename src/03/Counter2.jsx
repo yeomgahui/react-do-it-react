@@ -1,33 +1,24 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Counter2 extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            //count의 초기값을 프로퍼티에서 전달된 값으로 설정한다.
-            count: props.count,
-        };
-        this.increaseCount = this.increaseCount.bind(this);
-    }
-
-    increaseCount() {
-        this.setState(({ count }) => ({
-            count: count + 1
-        }));
-    }
 
     render() {
         return (
             <div>
-                현재 카운트 : {this.state.count}
+                현재 카운트 : {this.props.count}
                 <button
-                    onClick={this.increaseCount}>
+                    onClick={() => this.props.onAdd()}>
                     카운트 증가
                 </button>
             </div>
         );
     }
 }
+
+Counter2.propsTypes = {
+    count: PropTypes.number,
+    onAdd: PropTypes.func,
+};
 
 export default Counter2;
