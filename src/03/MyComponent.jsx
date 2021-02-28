@@ -27,7 +27,7 @@ class MyComponent extends Component {
 
 class MyPureComponent extends React.PureComponent {
     componentDidUpdate() {
-        console.log();
+        console.log('MyPureComponent 새로고침');
     }
 }
 
