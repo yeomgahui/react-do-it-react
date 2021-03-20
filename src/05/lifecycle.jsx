@@ -24,3 +24,4 @@ export const withLoadData = lifecycle({
 
 export const PageWithLoadData = withLoadData(Page);
 export const PageWithLoadDataAndLoading = compose(withLoadData, withLoading('서버 요청 중'))(Page);
+//compose함수로 하이어오더 컴포넌트 생성함수를 묶은 후, Page 컴포넌트에 적용함
