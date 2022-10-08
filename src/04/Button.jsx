@@ -18,13 +18,16 @@ class Button extends PureComponent {
         } = this.props;
 
         return (
-            <button {...css(styles.default,
+            <button 
+                {...css(
+                styles.default,
                 xsmall && styles.xsmall,
                 small && styles.small,
                 large && styles.large,
                 xlarge && styles.xlarge,
                 secondary && styles.secondary,
-                primary && styles.primary)}
+                primary && styles.primary
+                )}
                 onClick={onPress}>
                 {children}
             </button>
